@@ -1,0 +1,34 @@
+CopperlineOS drivers — licensing overview
+
+Copyright (c) 2025 CopperlineOS Authors
+
+This repository contains both Linux kernel modules and userspace code.
+
+LICENSE BY DIRECTORY
+--------------------
+- kernel/           -> GPL-2.0-only
+- uapi/             -> Apache-2.0 OR MIT
+- userspace/        -> Apache-2.0 OR MIT
+- dkms/, udev/, systemd/, tools/, scripts/ -> Apache-2.0 OR MIT
+
+The full texts are provided in:
+- LICENSE-GPL-2.0   (GNU General Public License v2.0, “only”)
+- LICENSE-APACHE    (Apache License, Version 2.0)
+- LICENSE-MIT       (MIT License)
+
+You may use the userspace parts under **either** Apache-2.0 **or** MIT, at your option.
+Kernel modules are GPL-2.0-only and include `MODULE_LICENSE("GPL")` for kernel compliance.
+
+SPDX HEADERS (put these at the top of files)
+--------------------------------------------
+- Kernel C files (modules):
+  // SPDX-License-Identifier: GPL-2.0-only
+  MODULE_LICENSE("GPL");
+
+- UAPI headers and userspace C/Rust/Shell:
+  // SPDX-License-Identifier: Apache-2.0 OR MIT
+
+NOTES
+-----
+- Distributors must keep the chosen license text with binaries (Apache users keep NOTICE).
+- If you contribute, you agree your changes are licensed the same way as the containing directory.
